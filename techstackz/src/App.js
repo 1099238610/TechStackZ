@@ -1,11 +1,12 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
 import './App.css';
-import Navbar from "./components/Navbar/Navbar";
-import TechInfo from './TechInfo';
+import TechInput from './TechInput';
 
 function App() {
-  return (
-  <div className="App">
-      <Navbar />
+  return (
+    <div className="App">
+      <TechInput/>
     </div>
   );
 }
