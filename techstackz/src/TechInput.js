@@ -1,12 +1,15 @@
 import React, {useState} from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import TechInfo from "./TechInfo";
+
 //import TechInfo from './TechInfo';
 
-function TechInput(){
+function TechInput() {
+
     const [techInput, setTechInput] = useState('');
-    const url = "https://54.252.231.242:8888/info/all"
-    const handleTextChange = event =>{
+    const url = "http://54.252.231.242:8888/info/all"
+    const handleTextChange = event => {
         setTechInput(event.target.value)
     }
 
@@ -28,7 +31,7 @@ function TechInput(){
         /* direct to tech info page component*/
         // <TechInfo data={techInput}/>
         fetch(url, requestOptions)
-            .then(response => response.text())
+            .then(response => response.json())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
     }
