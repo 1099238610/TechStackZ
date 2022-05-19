@@ -10,7 +10,7 @@ function App() {
       <TechInput/>
       <Footer/>
     </div>
-  );
+  );
 }
 
 export default App;
