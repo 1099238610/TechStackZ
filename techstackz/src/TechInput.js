@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import TechInfo from "./TechInfo";
@@ -8,6 +9,8 @@ import TechInfo from "./TechInfo";
 function TechInput() {
 
     const [techInput, setTechInput] = useState('');
+
+    // useState, useEffect, useRef
     const url = "http://54.252.231.242:8888/info/all"
     const handleTextChange = event => {
         setTechInput(event.target.value)
@@ -45,9 +48,11 @@ function TechInput() {
             label="Enter A Technology"
             value= {techInput}
             onChange= {handleTextChange}/>
+            <Link to={`/techinfo/${techInput}`}>
             <Button variant="contained"
             onClick={search}
             >Search</Button>
+            </Link>
         </div>
     );
 }
