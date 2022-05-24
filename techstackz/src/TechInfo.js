@@ -4,12 +4,22 @@ import {Card} from "@mui/material";
 import {CardContent} from "@mui/material";
 import {Typography} from "@mui/material";
 
+import { useHistory,useParams } from "react-router-dom";
+
 
 function TechInfo(props) {
     const [techInfo, setTechInfo] = useState('');
     const handleTextChange = event => {
         setTechInfo(event.target.value);
     }
+
+    var retrieveUrlParams = () => {
+        console.log(props);
+    }
+
+        
+    const {tagName} = useParams();
+    console.log(tagName);
 
     return (
         <div >
