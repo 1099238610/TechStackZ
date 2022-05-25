@@ -41,11 +41,12 @@ function TechInfo(props) {
         fetch(url, requestOptions)
             .then(response => response.json())
             .then(result => information.push(result))
-            .then(result => console.log(information))
+            // .then(result => console.log(information))
             .catch(error => console.log('error', error));
     }
 
     search()
+    console.log(information)
 
     return (
         <div>
