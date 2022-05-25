@@ -1,30 +1,47 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {Grid} from "@mui/material";
 import {Card} from "@mui/material";
 import {CardContent} from "@mui/material";
 import {Typography} from "@mui/material";
-
+import axios from "axios";
 import {useHistory, useParams} from "react-router-dom";
 
 
 function TechInfo(props) {
     const [techInfo, setTechInfo] = useState('');
+    const [synonms,setSynonms] =useState([]);
+    const [topTenQuestion,setTopTenQuestion] =useState([]);
     const handleTextChange = event => {
         setTechInfo(event.target.value);
     }
 
-    let retrieveUrlParams = () => {
+
+
+    var retrieveUrlParams = () => {
         console.log(props);
     }
-
-    let topQuestions = ""
-
     const {tagName} = useParams();
-    const info = JSON.parse(sessionStorage.getItem("all")).data;
+    var info = "";
 
-    for (let i = 0; i < info.topTenQuestion.length; i++) {
-        topQuestions += info.topTenQuestion[i].link + "\n" + info.topTenQuestion[i].title + "\n";
+    React.useEffect(()=>{
+         axios({
+    method: 'post', //you can set what request you want to be
+    url: 'http://54.252.231.242:8888/info/all',
+    data: {"tagName":tagName},
+    headers: {
+        "Content-Type": "application/json"
     }
+    }).then(result=> {
+        console.log(result)
+        setTechInfo(result.data.data.excerpt);
+        setSynonms(result.data.data.synonyms);
+        // setTopTenQuestion(result.data.data.topTenQuestion.link)
+        console.log(synonms.length)
+        
+    });
+
+    console.log(techInfo);
+    },[1]);
 
     return (
         <div>
@@ -32,21 +49,21 @@ function TechInfo(props) {
                 <h1>{tagName}</h1>
                 <Grid container spacing={3}>
                     <Grid item xs={4}>
-                        <TechName introduction={info.excerpt}/>
+                        <TechName introduction={techInfo}/>
                     </Grid>
                     <Grid item xs={4}>
                         <AvailableTutorial
                             availabletutorial={"GeeksForGeeks Python Tutorial, W3Schools Python Tutorial"}/>
                     </Grid>
                     <Grid item xs={4}>
-                        <SimilarTechnology similartechnology={"Java"}/>
+                        <SimilarTechnology similartechnology={synonms}/>
                     </Grid>
                 </Grid>
                 <br/>
                 <br/>
                 <Grid container spacing={3}>
                     <Grid item xs={6}>
-                        <StackOverflow stackoverflow={topQuestions}/>
+                        <StackOverflow stackoverflow={topTenQuestion}/>
                     </Grid>
                     <Grid item xs={6}>
                         <Mapping maps={"123"}/>
