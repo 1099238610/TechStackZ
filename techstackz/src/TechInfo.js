@@ -4,13 +4,14 @@ import {Card} from "@mui/material";
 import {CardContent} from "@mui/material";
 import {Typography} from "@mui/material";
 import axios from "axios";
+import Navbar from './components/Navbar/Navbar';
 import {useHistory, useParams} from "react-router-dom";
 
 
 function TechInfo(props) {
     const [techInfo, setTechInfo] = useState('');
-    const [synonms,setSynonms] =useState([]);
-    const [topTenQuestion,setTopTenQuestion] =useState([]);
+    const [synonms,setSynonms] =useState("");
+    const [topTenQuestion,setTopTenQuestion] =useState("");
     const handleTextChange = event => {
         setTechInfo(event.target.value);
     }
@@ -34,8 +35,19 @@ function TechInfo(props) {
     }).then(result=> {
         console.log(result)
         setTechInfo(result.data.data.excerpt);
-        setSynonms(result.data.data.synonyms);
-        // setTopTenQuestion(result.data.data.topTenQuestion.link)
+        let synonyms = ""
+        for (let i = 0; i < result.data.data.synonyms.length; i++) {
+            synonyms += result.data.data.synonyms[i] + "\n";
+        }
+        console.log(synonyms)
+        setSynonms(synonyms);
+
+        let topQuestions = ""
+        for (let i = 0; i < result.data.data.topTenQuestion.length; i++) {
+            topQuestions += result.data.data.topTenQuestion[i].link + "\n" + result.data.data.topTenQuestion[i].title + "\n";
+        }
+        console.log(topQuestions)
+        setTopTenQuestion(topQuestions)
         console.log(synonms.length)
         
     });
@@ -45,6 +57,7 @@ function TechInfo(props) {
 
     return (
         <div>
+            <Navbar/>
             <Grid contrainer sx={{m: 10}}>
                 <h1>{tagName}</h1>
                 <Grid container spacing={3}>
@@ -66,7 +79,7 @@ function TechInfo(props) {
                         <StackOverflow stackoverflow={topTenQuestion}/>
                     </Grid>
                     <Grid item xs={6}>
-                        <Mapping maps={"123"}/>
+                        <Mapping maps={"Map box holder"}/>
                     </Grid>
                 </Grid>
             </Grid>
