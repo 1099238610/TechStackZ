@@ -33,7 +33,7 @@ class Navbar extends Component {
                         )
                     })}
                 </ul>
-                <Button variant="contained" onClick={submit}>Submit</Button>
+                {/* <Button variant="contained" onClick={submit}>Submit</Button> */}
                 {/* <Button>Sign Up</Button> */}
             </nav>
         )

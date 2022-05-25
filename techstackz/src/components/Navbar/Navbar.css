@@ -1,5 +1,5 @@
 .NavbarItems {
-    background: linear-gradient(90deg, rgb(145, 144, 158) 0%, rgb(76, 63, 226) 100%);
+    background: linear-gradient(90deg, rgb(122, 132, 162) 0%, rgb(76, 63, 226) 100%);
     height: 80px;
     display: flex;
     justify-content: center;
@@ -8,7 +8,7 @@
 }
 
 .navbar-logo {
-    color: rgb(128, 156, 49);
+    color: rgb(12, 76, 30);
     justify-self: start;
     margin-left: 20px;
     cursor: pointer;
@@ -37,7 +37,7 @@
 }
 
 .nav-links:hover {
-    background-color: #9193a2;
+    background-color: #303eaaaf;
     border-radius: 4px;
     transition: all 0.2s ease-out;
 }
