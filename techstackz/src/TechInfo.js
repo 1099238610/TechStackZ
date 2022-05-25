@@ -13,40 +13,18 @@ function TechInfo(props) {
         setTechInfo(event.target.value);
     }
 
-    let information = [1]
-
-    var retrieveUrlParams = () => {
+    let retrieveUrlParams = () => {
         console.log(props);
     }
 
+    let topQuestions = ""
 
     const {tagName} = useParams();
-    const url = "http://54.252.231.242:8888/info/all"
-    const raw = JSON.stringify({
-        "tagName": tagName
-    });
+    const info = JSON.parse(sessionStorage.getItem("all")).data;
 
-    const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    const requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
-    };
-
-    const search = () => {
-        /* direct to tech info page component*/
-        fetch(url, requestOptions)
-            .then(response => response.json())
-            .then(result => information.push(result))
-            // .then(result => console.log(information))
-            .catch(error => console.log('error', error));
+    for (let i = 0; i < info.topTenQuestion.length; i++) {
+        topQuestions += info.topTenQuestion[i].link + "\n" + info.topTenQuestion[i].title + "\n";
     }
-
-    search()
-    console.log(information)
 
     return (
         <div>
@@ -54,7 +32,7 @@ function TechInfo(props) {
                 <h1>{tagName}</h1>
                 <Grid container spacing={3}>
                     <Grid item xs={4}>
-                        <TechName introduction={information[0]}/>
+                        <TechName introduction={info.excerpt}/>
                     </Grid>
                     <Grid item xs={4}>
                         <AvailableTutorial
@@ -68,7 +46,7 @@ function TechInfo(props) {
                 <br/>
                 <Grid container spacing={3}>
                     <Grid item xs={6}>
-                        <StackOverflow stackoverflow={"123"}/>
+                        <StackOverflow stackoverflow={topQuestions}/>
                     </Grid>
                     <Grid item xs={6}>
                         <Mapping maps={"123"}/>
