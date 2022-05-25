@@ -11,7 +11,6 @@ function TechInput() {
     const [techInput, setTechInput] = useState('');
 
     // useState, useEffect, useRef
-    const url = "http://54.252.231.242:8888/info/all"
     const handleTextChange = event => {
         setTechInput(event.target.value)
     }
@@ -19,6 +18,7 @@ function TechInput() {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
+    const url = "http://54.252.231.242:8888/info/all"
     const raw = JSON.stringify({
         "tagName": techInput
     });
@@ -35,7 +35,7 @@ function TechInput() {
         // <TechInfo data={techInput}/>
         fetch(url, requestOptions)
             .then(response => response.json())
-            .then(result => console.log(result))
+            // .then(result => console.log(result))
             .catch(error => console.log('error', error));
     }
 
@@ -50,7 +50,6 @@ function TechInput() {
             onChange= {handleTextChange}/>
             <Link to={`/techinfo/${techInput}`}>
             <Button variant="contained"
-            onClick={search}
             >Search</Button>
             </Link>
         </div>
