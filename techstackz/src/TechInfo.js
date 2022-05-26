@@ -6,6 +6,7 @@ import {Typography} from "@mui/material";
 import axios from "axios";
 import Navbar from './components/Navbar/Navbar';
 import {useHistory, useParams} from "react-router-dom";
+import Footer from "./footer";
 
 
 function TechInfo(props) {
@@ -59,14 +60,14 @@ function TechInfo(props) {
         <div>
             <Navbar/>
             <Grid contrainer sx={{m: 10}}>
-                <h1>{tagName}</h1>
+                <h1>{tagName.toUpperCase()}</h1>
                 <Grid container spacing={3}>
                     <Grid item xs={4}>
                         <TechName introduction={techInfo}/>
                     </Grid>
                     <Grid item xs={4}>
                         <AvailableTutorial
-                            availabletutorial={"GeeksForGeeks Python Tutorial, W3Schools Python Tutorial"}/>
+                            availabletutorial={"GeeksForGeeks Tutorial, W3Schools Tutorial"}/>
                     </Grid>
                     <Grid item xs={4}>
                         <SimilarTechnology similartechnology={synonms}/>
@@ -83,6 +84,7 @@ function TechInfo(props) {
                     </Grid>
                 </Grid>
             </Grid>
+            <Footer/>
         </div>
     );
 }
