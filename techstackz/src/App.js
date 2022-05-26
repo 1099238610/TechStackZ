@@ -8,6 +8,18 @@ import Footer from './footer';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+const useLocalStorage = (storageKey, fallbackState) => {
+  const [value, setValue] = React.useState(
+    JSON.parse(localStorage.getItem(storageKey)) ?? fallbackState
+  );
+
+  React.useEffect(() => {
+    localStorage.setItem(storageKey, JSON.stringify(value));
+  }, [value, storageKey]);
+
+  return [value, setValue];
+};
+
 function App() {
   return (
     <>
