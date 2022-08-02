@@ -6,7 +6,7 @@ import {Grid} from "@mui/material";
 
 import TechInfo from "./TechInfo";
 
-//import TechInfo from './TechInfo';
+//import TechInfomation from './TechInfomation';
 
 function TechInput() {
 
