@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { MenuItems } from "./MenuItems"
-// import { Button } from "../Button.js"
-import Button from "@mui/material/Button"
 import './Navbar.css'
 
 class Navbar extends Component {
@@ -33,8 +31,6 @@ class Navbar extends Component {
                         )
                     })}
                 </ul>
-                {/* <Button variant="contained" onClick={submit}>Submit</Button> */}
-                {/* <Button>Sign Up</Button> */}
             </nav>
         )
     }

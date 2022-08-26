@@ -28,7 +28,7 @@ function TechInfo(props) {
     React.useEffect(()=>{
          axios({
     method: 'post', //you can set what request you want to be
-    url: 'http://54.252.231.242:8888/info/all',
+    url: 'http://3.26.190.60:8888/info/all',
     data: {"tagName":tagName},
     headers: {
         "Content-Type": "application/json"
