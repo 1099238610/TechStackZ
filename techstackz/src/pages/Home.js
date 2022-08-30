@@ -8,7 +8,7 @@ function Home() {
   return (
     <>
       {/* add the container */}
-      <div className={'section-container'} style={{height: 1250}}>
+      <div className={'section-container'}>
         {/* cove the page with video as the background */}
         <video src="/videos/Video-1.mp4" autoPlay={true} loop muted/>
         <h1>ADVENTURE AWAITS</h1>
