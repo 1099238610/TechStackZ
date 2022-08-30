@@ -3,6 +3,7 @@ import Card from '../components/Card/HomeCards'
 import {Button} from "../components/Button/Button";
 import React from "react";
 import "./css/PageSection.css"
+import {Link} from "react-router-dom";
 
 function Home() {
   return (
@@ -11,16 +12,16 @@ function Home() {
       <div className={'section-container'}>
         {/* cove the page with video as the background */}
         <video src="/videos/Video-1.mp4" autoPlay={true} loop muted/>
-        <h1>ADVENTURE AWAITS</h1>
+        <h1>TECH FUTURE AWAITS</h1>
         <p>What are you waiting for?</p>
         {/* buttons */}
         <div className="section-btns">
-          <Button className='btns' buttonStyle='btn--outline' buttonSize='btn--large'>GET STARTED</Button>
-          <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large'>WATCH TRAILER <i
-            className={'far fa-play-circle'}/> </Button>
+          <Link to={'/techSearch'}>
+            <Button className='btns' buttonStyle='btn--outline' buttonSize='btn--large'>GET STARTED</Button>
+          </Link>
         </div>
       </div>
-      <Card />
+      <Card/>
     </>
   )
 }
