@@ -64,14 +64,10 @@ function Navbar() {
                 Recommendation
               </Link>
             </li>
-            <li>
-              <Link to={'/sign-up'} className={'nav-links-mobile'} onClick={closeMobileMenu}>
-                Sign Up
-              </Link>
-            </li>
+
           </ul>
           {/* decide whether show the sign-up button depending on the window width*/}
-          {button && <Button buttonStyle={'btn-outline'}>SIGN UP</Button>}
+
         </div>
       </nav>
     </>

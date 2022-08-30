@@ -18,15 +18,6 @@ export const MenuItems = [
         cName: 'nav-links',
         icon: "fa fa-thumbs-o-up"
     }
-    // {
-    //     title: 'Contact Us',
-    //     url: '#',
-    //     cName: 'nav-links'
-    // },
-    // {
-    //     title: 'Sign up',
-    //     url: '#',
-    //     cName: 'nav-links-mobile'
-    // }
+
 
 ]
