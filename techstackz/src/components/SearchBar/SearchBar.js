@@ -5,7 +5,7 @@ import {Button} from "../Button/Button";
 
 function SearchBar() {
   // states
-  const [userInput, setUserInput] = useState("Python")
+  const [userInput, setUserInput] = useState("python")
 
   // collect user input and store it to userInput state
   const handleTextChange = e => {
@@ -16,7 +16,7 @@ function SearchBar() {
     <>
       {/* search bar */}
       <div className={"search"}>
-        <input className={"search__input"} defaultValue={"Python"} type={"text"} id={"search"}
+        <input className={"search__input"} defaultValue={"python"} type={"text"} id={"search"}
                onChange={handleTextChange}/>
       </div>
       <p></p>
