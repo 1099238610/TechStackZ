@@ -1,11 +1,15 @@
 import '../App.css'
 import Card from '../components/Card/HomeCards'
 import {Button} from "../components/Button/Button";
-import React from "react";
+import React, {useEffect} from "react";
 import "./css/PageSection.css"
 import {Link} from "react-router-dom";
 
 function Home() {
+  useEffect(() => {
+    window.scroll(0, 0)
+  }, [])
+
   return (
     <>
       {/* add the container */}

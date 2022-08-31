@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import '../App.css'
 import "./css/PageSection.css"
 import SearchBar from '../components/SearchBar/SearchBar.js'
@@ -6,6 +6,10 @@ import Slider from "../components/Slider/Slider";
 
 
 function TechSearch() {
+  useEffect(() => {
+    window.scroll(0, 0)
+  }, [])
+
   return (
     <>
       {/* add the container */}
