@@ -11,7 +11,7 @@ function TechSearch() {
     <ScrollToTop>
     </ScrollToTop>
       {/* add the container */}
-      <div className={'section-container'} style={{height : 800}}>
+      <div className={'section-container'} style={{height : 600}}>
         {/* config the image as the background */}
         <img id={"dark"} src={'images/tech_search.jpeg'} alt={"backgroundImage"}/>
         <h1>Desired stack , See it now</h1>
