@@ -4,12 +4,17 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
 
+ var cardStyle = {
+    height: '10em'
+}
+
 export default function InfoCard({ InfoName,tagInfo })
 {
 
+
     return(
         <>
-        <Card sx={{ minWidth: 275 }}>
+        <Card style = {cardStyle} sx={{ minWidth: 275}}>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           {InfoName}
@@ -17,10 +22,11 @@ export default function InfoCard({ InfoName,tagInfo })
         <Typography variant="h5" component="div">
           
         </Typography>
-
         <Typography variant="body2">
-          {tagInfo}
-          <br />
+          {
+            tagInfo
+          }
+          
         </Typography>
       </CardContent>
     </Card>

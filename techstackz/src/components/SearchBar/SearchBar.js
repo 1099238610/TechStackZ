@@ -23,7 +23,7 @@ function SearchBar() {
       <p></p>
       {/* search button and link to the techInformation page with userInput */}
       <Link to={`/techInformation/${userInput}`}>
-        <Button className='btns' buttonStyle='btn--outline' buttonSize='btn--large'>GO SEARCH</Button>
+        <Button className='btns' buttonStyle='btn--outline' buttonSize='btn--large'>Search</Button>
       </Link>
     </>
   )

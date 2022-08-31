@@ -18,12 +18,12 @@ export default function Slider() {
               <img src={"images/ScrollingBar/c.png"} alt={"c"}/>
             </div>
           </Link>
-          <Link to={"/techInformation/cpp"}>
+          <Link to={"/techInformation/c++"}>
             <div className={"slide"}>
               <img src={"images/ScrollingBar/cpp.png"} alt={"cpp"}/>
             </div>
           </Link>
-          <Link to={"/techInformation/csharp"}>
+          <Link to={"/techInformation/c#"}>
             <div className={"slide"}>
               <img src={"images/ScrollingBar/csharp.png"} alt={"csharp"}/>
             </div>
@@ -67,12 +67,12 @@ export default function Slider() {
           </Link>
           <Link to={"/techInformation/cpp"}>
             <div className={"slide"}>
-              <img src={"images/ScrollingBar/cpp.png"} alt={"cpp"}/>
+              <img src={"images/ScrollingBar/cpp.png"} alt={"c++"}/>
             </div>
           </Link>
           <Link to={"/techInformation/csharp"}>
             <div className={"slide"}>
-              <img src={"images/ScrollingBar/csharp.png"} alt={"csharp"}/>
+              <img src={"images/ScrollingBar/csharp.png"} alt={"c#"}/>
             </div>
           </Link>
           <Link to={"/techInformation/go"}>

@@ -4,10 +4,13 @@ import {Button} from "../components/Button/Button";
 import React from "react";
 import "./css/PageSection.css"
 import {Link} from "react-router-dom";
+import ScrollToTop from "../components/ScrollToTop";
 
 function Home() {
   return (
     <>
+    <ScrollToTop>
+    </ScrollToTop>
       {/* add the container */}
       <div className={'section-container'}>
         {/* cove the page with video as the background */}
