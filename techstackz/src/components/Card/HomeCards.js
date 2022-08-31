@@ -6,7 +6,7 @@ function HomeCards() {
   return (
     <div className={'cards'}>
       {/* the title of the cards */}
-      <h1>Check out these EPIC Destinations!</h1>
+      <h1>Check out our SURPRISING services!</h1>
       <div className={"cards__container"}>
         <div className={"cards__wrapper"}>
           {/* config information in the card Items */}

@@ -20,7 +20,7 @@ function Home() {
         {/* cove the page with video as the background */}
         <video src="/videos/Video-1.mp4" autoPlay={true} loop muted/>
         <h1>TECH FUTURE AWAITS</h1>
-        <p>What are you waiting for?</p>
+        <p>We light your way to success</p>
         {/* buttons */}
         <div className="section-btns">
           <Link to={'/techSearch'}>

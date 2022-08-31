@@ -18,7 +18,7 @@ function TechSearch() {
       <div className={'section-container'} style={{height : 800}}>
         {/* config the image as the background */}
         <img id={"dark"} src={'images/tech_search.jpeg'} alt={"backgroundImage"}/>
-        <h1>Desired stack , See it now</h1>
+        <h1>Desired stack , Check it now</h1>
         {/* add the search bar */}
         <SearchBar />
       </div>
