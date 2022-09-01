@@ -2,8 +2,6 @@ import React from "react";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { CardHeader } from "@mui/material";
-import { Link } from "react-router-dom";
 import "./TopQuestionCard.css";
 
  var cardStyle = {
@@ -15,7 +13,8 @@ export default function TutorialLinkCard({cardName,arr})
         <>
         <Card style = {cardStyle} sx={{ minWidth: 275 }}>
       <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+        <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+          <i className="fa-solid fa-link"></i>
           {cardName}
         </Typography>
           {

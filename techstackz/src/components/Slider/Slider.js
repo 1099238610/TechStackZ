@@ -58,21 +58,46 @@ export default function Slider() {
               <img src={"images/ScrollingBar/typescript.png"} alt={"typescript"}/>
             </div>
           </Link>
+          <Link to={"/techInformation/ios"}>
+            <div className={"slide"}>
+              <img src={"images/ScrollingBar/ios.png"} alt={"ios"}/>
+            </div>
+          </Link>
+          <Link to={"/techInformation/linux"}>
+            <div className={"slide"}>
+              <img src={"images/ScrollingBar/linux.png"} alt={"linux"}/>
+            </div>
+          </Link>
+          <Link to={"/techInformation/gmail"}>
+            <div className={"slide"}>
+              <img src={"images/ScrollingBar/gmail.png"} alt={"gmail"}/>
+            </div>
+          </Link>
+          <Link to={"/techInformation/android"}>
+            <div className={"slide"}>
+              <img src={"images/ScrollingBar/android.png"} alt={"android"}/>
+            </div>
+          </Link>
+          <Link to={"/techInformation/redis"}>
+            <div className={"slide"}>
+              <img src={"images/ScrollingBar/redis.png"} alt={"redis"}/>
+            </div>
+          </Link>
 
-          {/* copy the same slider contents as above to turn the slider to be infinite loop */}
+
           <Link to={"/techInformation/c"}>
             <div className={"slide"}>
               <img src={"images/ScrollingBar/c.png"} alt={"c"}/>
             </div>
           </Link>
-          <Link to={"/techInformation/cpp"}>
+          <Link to={"/techInformation/c%2B%2B"}>
             <div className={"slide"}>
               <img src={"images/ScrollingBar/cpp.png"} alt={"c++"}/>
             </div>
           </Link>
-          <Link to={"/techInformation/csharp"}>
+          <Link to={"/techInformation/c%23"}>
             <div className={"slide"}>
-              <img src={"images/ScrollingBar/csharp.png"} alt={"c#"}/>
+              <img src={"images/ScrollingBar/csharp.png"} alt={"csharp"}/>
             </div>
           </Link>
           <Link to={"/techInformation/go"}>
@@ -103,6 +128,31 @@ export default function Slider() {
           <Link to={"/techInformation/typescript"}>
             <div className={"slide"}>
               <img src={"images/ScrollingBar/typescript.png"} alt={"typescript"}/>
+            </div>
+          </Link>
+          <Link to={"/techInformation/ios"}>
+            <div className={"slide"}>
+              <img src={"images/ScrollingBar/ios.png"} alt={"ios"}/>
+            </div>
+          </Link>
+          <Link to={"/techInformation/linux"}>
+            <div className={"slide"}>
+              <img src={"images/ScrollingBar/linux.png"} alt={"linux"}/>
+            </div>
+          </Link>
+          <Link to={"/techInformation/gmail"}>
+            <div className={"slide"}>
+              <img src={"images/ScrollingBar/gmail.png"} alt={"gmail"}/>
+            </div>
+          </Link>
+          <Link to={"/techInformation/android"}>
+            <div className={"slide"}>
+              <img src={"images/ScrollingBar/android.png"} alt={"android"}/>
+            </div>
+          </Link>
+          <Link to={"/techInformation/redis"}>
+            <div className={"slide"}>
+              <img src={"images/ScrollingBar/redis.png"} alt={"redis"}/>
             </div>
           </Link>
         </div>
