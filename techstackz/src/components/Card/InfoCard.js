@@ -10,6 +10,14 @@ import Typography from '@mui/material/Typography';
 
 export default function InfoCard({ InfoName,tagInfo })
 {
+  let section;
+  if (tagInfo.length>0)
+  {
+    section =<Typography variant="body2">{tagInfo}</Typography>  
+  }
+  else{
+    section =<Typography variant="body2">... No Relevent Resource In Our Database ... </Typography>  
+  }
 
 
     return(
@@ -23,12 +31,7 @@ export default function InfoCard({ InfoName,tagInfo })
         <Typography variant="h5" component="div">
           
         </Typography>
-        <Typography variant="body2">
-          {
-            tagInfo
-          }
-          
-        </Typography>
+        {section}
       </CardContent>
     </Card>
         </>

@@ -8,6 +8,7 @@ import TopQuestionCard from "../components/Card/TopQuestionCard";
 import {Grid} from "@mui/material";
 import TutorialLinkCard from "../components/Card/TutorialLinkCard";
 import GoogleTrend from "../components/Card/GoogleTrend";
+import RelationshipCard from "../components/Card/RelationshipCard";
 
 function TechInformation() {
   const [techInfo, setTechInfo] = useState('')
@@ -16,7 +17,8 @@ function TechInformation() {
   const [tutorialLink, setTutorialLink] = useState([])
   const {tagName} = useParams()
   const [tagNameAfter, setTagNameAfter] = useState('')
-  const [relationship, setRelationship] = useState([])
+  const [relationship, setRelationship] = useState([]);
+
 
   useEffect(() => {
     window.scroll(0,0)
@@ -38,7 +40,7 @@ function TechInformation() {
       for (let i = 0; i < result.data.data.topTenQuestion.length; i++) {
         topQuestions.push(result.data.data.topTenQuestion[i]);
       }
-      setTopTenQuestion(topQuestions)
+      setTopTenQuestion(topQuestions);
 
       let links = [];
       let linksFromDataBase = result.data.data.tutorialLink;
@@ -51,7 +53,28 @@ function TechInformation() {
       setTagNameAfter(tagNameAfter);
 
     });
-  }, []);
+
+    axios({
+      method: 'get', //you can set what request you want to be
+      url: `https://api.stackexchange.com/2.3/tags/${encodeURI(tagName)}/related?site=stackoverflow&filter=!T.BkwD0sk(EEa)0xwf`, 
+      headers: {
+        "Content-Type": "application/json",
+        "key":"QdZTIOrKI7)zdPBT*0iyag(("
+      }
+    }).then(result =>{
+      let temarr = [];
+      for(let i =0;i<result.data.items.length;i++)
+      {
+        temarr.push(result.data.items[i].name)
+      }
+      setRelationship(temarr);
+
+    });
+
+    
+    }, []);
+
+    console.log(relationship);
 
 
   return (
@@ -73,7 +96,7 @@ function TechInformation() {
           <Grid item xs={6}>
             <TutorialLinkCard cardName={" Useful Tutorial Links"} arr={tutorialLink}/>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={6}>
             <div id="widget">
               <GoogleTrend
                 type="TIMESERIES"
@@ -85,6 +108,11 @@ function TechInformation() {
                 keyword={tagName}
                 url="https://ssl.gstatic.com/trends_nrtr/2051_RC11/embed_loader.js"
               />
+            </div>
+          </Grid>
+           <Grid item xs={6}>
+            <div id="widget">
+            <RelationshipCard arr = {relationship}/>
             </div>
           </Grid>
         </Grid>

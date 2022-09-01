@@ -15,14 +15,14 @@ function SearchBar() {
   const [userInput, setUserInput] = useState("python")
   const [arr, setArr] = useState([])
 
-  axios({
-    method: 'get', //you can set what request you want to be
-    url: 'http://3.26.190.60:8888/info/techList',
-    headers: {
-      "Content-Type": "application/json"
-    }
-  }).then(result=> { setArr(result["data"])
-  });
+  // axios({
+  //   method: 'get', //you can set what request you want to be
+  //   url: 'http://3.26.190.60:8888/info/techList',
+  //   headers: {
+  //     "Content-Type": "application/json"
+  //   }
+  // }).then(result=> { setArr(result["data"])
+  // });
 
   // collect user input and store it to userInput state
   const handleTextChange = e => {
@@ -34,7 +34,7 @@ function SearchBar() {
       {/* search bar */}
       <div className={"search"}>
         <input className={"search__input"} defaultValue={"python"} type={"text"} id={"search"}
-               onChange={handleTextChange} list={"datalist"}/>
+               onChange={handleTextChange} />
       
       <datalist id={"datalist"}>
           {arr.map((value) =>{
