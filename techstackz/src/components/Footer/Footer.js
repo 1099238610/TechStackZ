@@ -8,7 +8,7 @@ function Footer() {
     <section className='footer-subscription'>
       {/* footer title */}
       <p className='footer-subscription-heading'>
-        Join the Adventure newsletter to receive our best vacation deals
+        Join our tech club to make your developing way easier
       </p>
       {/* footer subtitle */}
       <p className='footer-subscription-text'>
