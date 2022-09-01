@@ -16,7 +16,8 @@ export default function InfoCard({ InfoName,tagInfo })
         <>
         <Card style = {cardStyle} sx={{ minWidth: 275}}>
       <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+        <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+          <i className="fa-solid fa-circle-info"></i>
           {InfoName}
         </Typography>
         <Typography variant="h5" component="div">
